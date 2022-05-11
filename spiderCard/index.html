@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/game.js"></script>
+<link rel="stylesheet" href="css/game.css">
+
+<body>
+    <h1 class="page-title">万圣节卡片配对游戏</h1>
+    <div class="game-text visible">开始游戏</div>
+    <div id="gameOver" class="game-text">
+        游戏结束
+        <span class="startover">重新开始</span>
+    </div>
+    <div id="gameVictory" class="game-text">
+        游戏胜利
+        <span class="startover">重新开始</span>
+        <span class="startover">翻牌次数:
+            <span class="fpnum"></span>次
+        </span>
+        <span class="startover">游戏用时:
+            <span class="gametime"></span>秒
+        </span>
+    </div>
+    <!-- <div class="paihang">
+        <p>次数排行版</p>
+        <span class=" paihangdata">
+            NO.1.  <span class="numData">&nbsp;&nbsp;</span>次
+        </span>
+        <p>时间排行版</p>
+        <span class=" paihangdata">
+            NO.1.  <span class="timeData">&nbsp;&nbsp;</span>秒
+        </span>
+    </div> -->
+    <div class="zanting" onclick="zanting()">暂停</div>
+    <div class="paihang">
+        <p>次数排行版</p>
+        <span class=" paihangdata">
+            <!-- NO.1.  <span class="numData">&nbsp;&nbsp;</span>次 -->
+        </span>
+        
+    </div>
+    <!-- div包含：16张卡牌、倒计时、翻牌次数、开始游戏、重新开始 -->
+    <div class="mengban "></div>
+    <div id="kp" class="game-content">
+
+        <div class="game-info-content">
+            <div class="game-info">
+                时间：
+                <span id="timeval">20</span>s
+            </div>
+            <div class="game-info">
+                翻牌：
+                <span id="flips">0</span>次
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+</script>
+
+</html>

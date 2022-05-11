@@ -1,0 +1,254 @@
+/* 基本样式设置 */
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #9d5900;
+}
+
+html {
+    cursor: url("../img/Ghost.cur.ico"), auto;
+}
+
+/* 基本样式设置结束 */
+/* 设置页面标题样式 */
+.page-title {
+    color: #ff6d00;
+    font-family: Creepy, serif;
+    text-align: center;
+    font-size: 5em;
+}
+
+/* 设置网格布局 */
+.game-content {
+    display: grid;
+    /* 设置一行多少列 */
+    grid-template-columns: repeat(4, auto);
+    /* 设置行间距 */
+    grid-gap: 10px;
+    /* 表格布局居中 */
+    justify-content: center;
+}
+
+/* 设置最大卡牌的大小 */
+.card {
+    height: 175px;
+    width: 125px;
+    position: relative;
+}
+
+/* 设置卡片背面 */
+.card-back {
+    background-color: black;
+    border-color: #ff6d00;
+}
+
+.card-item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* 弹性布局 */
+    display: flex;
+    /* 在弹性盒对象的元素中的各项周围留有空白 */
+    justify-content: center;
+    /* 居中对齐弹性盒的各项元素 */
+    align-items: center;
+    /* 内容溢出时隐藏 */
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #ff6d00;
+    /* 卡牌翻转动画 */
+    transition: transform 500ms ease-in-out;
+}
+
+/* 小图标总体设置 */
+.kpicon {
+    width: 47px;
+    height: 47px;
+    position: absolute;
+}
+
+.icon-top-left {
+    /* 设置旋转角度 */
+    transform: rotate(270deg);
+    top: 0px;
+    left: 0px;
+}
+
+.icon-top-right {
+    /* transform: rotate(270deg); */
+    top: 0px;
+    right: 0px;
+}
+
+.icon-bottom-right {
+    transform: rotate(90deg);
+    bottom: 0px;
+    right: 0px;
+}
+
+.icon-bottom-left {
+    transform: rotate(180deg);
+    bottom: 0px;
+    left: 0px;
+}
+
+/* 蜘蛛 */
+.spider {
+    /* Y轴上移 */
+    transform: translateY(-10px);
+    align-self: flex-start;
+}
+
+/* 蜘蛛悬浮事件 */
+.card-back:hover .spider {
+    transform: translateY(0px);
+}
+
+/* 蜘蛛网悬浮事件 */
+.card-back:hover .kpicon {
+    width: 52px;
+    height: 52px;
+}
+
+/* 单张卡牌未翻转样式...结束 */
+/* 单张卡牌翻转样式...开始 */
+.card-face {
+    background-color: #ffbb89;
+    border-color: #333;
+    /* 旋转180度 */
+    transform: rotateY(180deg);
+    /* 隐藏 */
+    backface-visibility: hidden;
+}
+
+.card-value {
+    /* 等比缩小放大 */
+    transform: scale(.8);
+}
+
+.card-face:hover .card-value {
+     /* 等比缩小放大 */
+    transform: scale(1);
+}
+/* 悬浮事件 */
+.card-face:hover .kpicon {
+    width: 52px;
+    height: 52px;
+}
+
+/* 编写翻转样式 */
+/* 选择 visible下的card-back*/
+.card.visible .card-back {
+    transform: rotateY(180deg);
+}
+
+.card.visible .card-face {
+    transform: rotateY(0deg);
+}
+/* 设置时间和翻牌样式 */
+.game-info-content{
+    display: flex;
+    justify-content: space-between;
+    grid-column: 1/-1;
+}
+.game-info{
+    font-family: 'Lunacy', Courier, monospace;
+    font-size: 2.5em;
+    color: #ffbb89;
+}
+/* 游戏开始与结束文字 */
+.game-text{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: #5e0000;
+    font-family: Creepy, serif;
+    font-size: 80px;
+}
+.game-text.visible{
+    display: flex;
+}
+.startover{
+    font-size: 60px;
+}
+/* 匹配成功抖动效果 */
+.cardmatchok {
+    animation: iframe 800ms infinite;
+}
+@keyframes iframe {
+    /* 水平抖动，核心代码 */
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%,
+    80% {
+        transform: translate3d(+2px, 0, 0);
+    }
+    30%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%,
+    60% {
+        transform: translate3d(+4px, 0, 0);
+    }
+    50% {
+        transform: translate3d(-4px, 0, 0);
+    }
+}
+/* 排行版 */
+.paihang{
+    width: 200px;
+    height: 300px;
+    background-color: #ec7404;
+    border-radius: 10px;
+    position: absolute;
+    top: 260px;
+    right: 100px;
+    
+}
+.paihang p{
+    text-align: center;
+    font-size: 24px;
+    margin: 0px;
+}
+.paihangdata{
+    display: block;
+    height: 120px;
+    margin-left: 10%;
+    margin-top: 10px;
+    /* background-color: #ffffff; */
+}
+.zanting{
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #ec7404;
+    border-radius: 5px;
+    position: absolute;
+    top: 260px;
+    right: 300px;
+}
+/* 创建蒙版 */
+.mengban {
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    opacity: 1;
+    z-index: 200;
+    display: none;
+   }
+.nomengban{
+    display: block;
+   }

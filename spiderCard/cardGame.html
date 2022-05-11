@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/game2.0.js"></script>
+<link rel="stylesheet" href="css/game2.0.css">
+
+<body>
+    <h1 class="page-title">万圣节卡片配对游戏</h1>
+    <div class="maxback">
+        <p class="kaishi" onclick="playMusic()">开始游戏</p>
+
+        <audio id="player" src="mp3/zhiwu.mp3"></audio>
+    </div>
+    <div id="kp" class="game-content">
+        <!-- <div class="card">
+            <div class="card-back card-item">
+                <img class="kpicon icon-top-left" src="img/Cobweb.png" alt="">
+                <img class="kpicon icon-top-right" src="img/Cobweb.png" alt="">
+                <img class="kpicon icon-bottom-left" src="img/Cobweb.png" alt="">
+                <img class="kpicon icon-bottom-right" src="img/Cobweb.png" alt="">
+                <img class="spider" src="img/Spider.png" alt="">
+            </div>
+            <div class="card-face card-item">
+                <img class="kpicon icon-top-left" src="img/CobwebGrey.png" alt="">
+                <img class="kpicon icon-top-right" src="img/CobwebGrey.png" alt="">
+                <img class="kpicon icon-bottom-left" src="img/CobwebGrey.png" alt="">
+                <img class="kpicon icon-bottom-right" src="img/CobwebGrey.png" alt="">
+                <img class="card-value" src="img/Bat.png" alt="">
+            </div>
+        </div> -->
+
+    </div>
+</body>
+<script>
+    function playMusic() {
+        var player = $("#player")[0]; /*jquery对象转换成js对象*/
+        if (player.paused) { /*如果已经暂停*/
+            player.play(); /*播放*/
+        } else {
+            player.pause();/*暂停*/
+        }
+    }
+</script>
+
+</html>

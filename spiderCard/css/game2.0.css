@@ -1,0 +1,131 @@
+/* 基本样式设置 */
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #9d5900;
+}
+
+html {
+    cursor: url("../img/Ghost.cur.ico"), auto;
+}
+
+/* 基本样式设置结束 */
+/* 设置页面标题样式 */
+.page-title {
+    color: #ff6d00;
+    font-family: Creepy, serif;
+    text-align: center;
+    font-size: 5em;
+}
+.game-content{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-gap:10px;
+    justify-content: center;
+}
+.card {
+    height: 175px;
+    width: 125px;
+    position: relative;
+}
+.card-back {
+    background-color: black;
+    border-color: #ff6d00;
+}
+.card-item{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #ff6d00;
+}
+.kpicon {
+    width: 47px;
+    height: 47px;
+    position: absolute;
+}
+.icon-top-left {
+    /* 设置旋转角度 */
+    transform: rotate(270deg);
+    top: 0px;
+    left: 0px;
+}
+
+.icon-top-right {
+    /* transform: rotate(270deg); */
+    top: 0px;
+    right: 0px;
+}
+
+.icon-bottom-right {
+    transform: rotate(90deg);
+    bottom: 0px;
+    right: 0px;
+}
+
+.icon-bottom-left {
+    transform: rotate(180deg);
+    bottom: 0px;
+    left: 0px;
+}
+.spider {
+    /* Y轴上移 */
+    transform: translateY(-10px);
+    align-self: flex-start;
+}
+.card-back:hover .spider {
+    transform: translateY(0px);
+}
+.card-back:hover .kpicon {
+    width: 52px;
+    height: 52px;
+}
+.card-face {
+    background-color: #ffbb89;
+    border-color: #333;
+    /* 旋转180度 */
+    transform: rotateY(180deg);
+    /* 隐藏 */
+    backface-visibility: hidden;
+}
+.card-value {
+    /* 等比缩小放大 */
+    transform: scale(.8);
+}
+
+.card-face:hover .card-value {
+     /* 等比缩小放大 */
+    transform: scale(1);
+}
+.card-face:hover .kpicon {
+    width: 52px;
+    height: 52px;
+}
+/* .visible .card-back {
+    transform: rotateY(-180deg);
+} */
+
+.visible .card-face {
+    transform: rotateY(0deg);
+}
+.maxback{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    line-height: 640px;
+    z-index: 100;
+    background-color: rgba(225, 225, 225, 0.3);
+    text-align: center;
+}
+.kaishi{
+    margin: auto;
+    font-size: 6em;
+    color: #ff6d00;
+    font-family: 'Courier New', Courier, monospace;
+}
